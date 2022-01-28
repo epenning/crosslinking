@@ -1,0 +1,21 @@
+find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
+
+tar czf models.tar.gz models
+
+/scratch1/08481/epenning/crosslinking/output/models.tar.gz
+
+Do multimer w/:
+
+2 of them
+Pick the smallest one (should be around 1800 AA)
+
+Visualizations?
+Seaborn in Python
+
+Multimer:
+
+pdb_seqres
+/scratch2/projects/bio/alphafold/data/pdb_seqres/pdb_seqres.txt
+
+Uniprot
+/scratch2/projects/bio/alphafold/data/uniprot/uniprot.fasta
