@@ -1,3 +1,4 @@
+Copies finished unrelaxed models toa new folder, prefixed with the protein ID, where / is replaced by _. Overall final location is models/<protein>-unrelaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 
 tar czf models.tar.gz models
@@ -12,10 +13,10 @@ Pick the smallest one (should be around 1800 AA)
 Visualizations?
 Seaborn in Python
 
-Multimer:
-
-pdb_seqres
-/scratch2/projects/bio/alphafold/data/pdb_seqres/pdb_seqres.txt
-
-Uniprot
-/scratch2/projects/bio/alphafold/data/uniprot/uniprot.fasta
+Current updates:
+1. Got the distance calculation for the crosslinks working! Just need to actually do something with them
+- See how many crosslinks are >30 distance in AF structure
+- Should I try checking distances for residues that didn't have actual crosslinks? Would be a lot
+- Visualizations
+2. AlphaFold 2.1.2 came out, finally fixed a bunch of issues I had to fix on my own fork, but probably won't be on TACC for a while
+3. Still not sure about why the pretzel-pretzel monomer separated by 30 X's is being automatically killed 30 min in.
