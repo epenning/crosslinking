@@ -59,12 +59,3 @@ find . -type f -name unrelaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" |
 'I7MDK2',
 'RACK1',
 
-
-
-Try 1 fasta with 2 copies separated by 30 ‘X’ in between them
-
-Crosslinking:
-
-Take the XLs data from the CSV I’m being sent, for each protein take the res1 and res2 and calc distances in the predicted .pdb
-(New NA column, replace with NA values as computed)
-

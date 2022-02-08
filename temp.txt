@@ -20,3 +20,12 @@ Current updates:
 - Visualizations
 2. AlphaFold 2.1.2 came out, finally fixed a bunch of issues I had to fix on my own fork, but probably won't be on TACC for a while
 3. Still not sure about why the pretzel-pretzel monomer separated by 30 X's is being automatically killed 30 min in.
+
+Chimera X
+* Look at domains (can get from uniprot)
+* Compare predicted structures with known from uniprot (for those that exist)
+Plot: see PDF
+
+For top 10 Xl proteins:
+* try running with relax, see if the XL changes
+ 
