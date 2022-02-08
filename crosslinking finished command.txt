@@ -34,10 +34,13 @@ find . -type f -name unrelaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" |
 'CCDC96',
 'TRS1',
 'I7M350',
+'CDC27',
 'I7M2E8',
+'I7MHP2',
 'FBPA',
 'CCDC81-1',
 'Q24CJ0',
+'SPEF2',
 'I7ML23',
 'I7LUZ1',
 'Q22MP6',
@@ -54,7 +57,8 @@ find . -type f -name unrelaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" |
 'I7MFS4',
 'RPS0',
 'I7MDK2',
-'RACK1'
+'RACK1',
+
 
 
 Try 1 fasta with 2 copies separated by 30 ‘X’ in between them
