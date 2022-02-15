@@ -1,14 +1,30 @@
-Copies finished unrelaxed models to a new folder, prefixed with the protein ID, where / is replaced by _. Overall final location is models/<protein>-unrelaxed_model_1.pdb
+Get finished PDBs as list:
+find . -type f -name unrelaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
+find . -type f -name relaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
+
+
+Generate commands to copy finished PDBs to models/<protein>-unrelaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 
+
+Compress finished PDBs:
 tar czf models.tar.gz models
 
+
+Location of compressed PDBs:
 /scratch1/08481/epenning/crosslinking/output/models.tar.gz
 
+
+Generate commands to copy rankings to rankings/<protein>-ranking_debug.json
 find * -name ranking_debug.json -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "rankings/$new"' \;
 
+
+Compress finished rankings:
 tar czf rankings.tar.gz rankings
+
+
+TODO:
 
 Visualizations?
 Seaborn in Python
@@ -18,8 +34,5 @@ Chimera X
 * Compare predicted structures with known from uniprot (for those that exist)
 Plot: see PDF
 
-For top 10 Xl proteins:
+For top 10 XL proteins:
 * try running with relax, see if the XL changes
- 
-
-plddts.model_1
