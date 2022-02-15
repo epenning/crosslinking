@@ -4,8 +4,9 @@ find . -type f -name relaxed_model_1.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | t
 
 
 
-Generate commands to copy finished PDBs to models/<protein>-unrelaxed_model_1.pdb
+Generate commands to copy finished PDBs to models/<protein>-(un)relaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
+find * -name relaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 
 
 Compress finished PDBs:
@@ -14,6 +15,7 @@ tar czf models.tar.gz models
 
 Location of compressed PDBs:
 /scratch1/08481/epenning/crosslinking/output/models.tar.gz
+/work/08481/epenning/maverick2/crosslinking/output/models.tar.gz
 
 
 Generate commands to copy rankings to rankings/<protein>-ranking_debug.json
