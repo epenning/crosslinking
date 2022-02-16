@@ -45,4 +45,3 @@ Updates:
 * Seems like Predicted Aligned Error would be nice to have to determine domain cutoffs, see Alphafold paper
 	- Except current outputs weren't run with the pTM models, so they don't have PAE values
 	- Apparently pTM models have slightly lower accuracy
-* 
