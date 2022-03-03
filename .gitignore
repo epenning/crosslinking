@@ -2,5 +2,6 @@
 .ipynb_checkpoints
 models/*
 results/*
+pae/*
 .idea
 .idea/*
