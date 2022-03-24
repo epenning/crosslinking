@@ -10,10 +10,10 @@ find * -name relaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr 
 
 
 Generate commands to copy finished PDBs to models/<protein>-relaxed_model_<model>_ptm.pdb
-find -regex './.*/relaxed_model_._ptm.pdb' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/${new:2}"' \;
+find -regex './.*/relaxed_model_1_ptm.pdb' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/${new:2}"' \;
 
 Generate commands to copy finished results to results/<protein>-result_model_<model>_ptm.pkl
-find -regex './.*/result_model_._ptm.pkl' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "results/${new:2}"' \;
+find -regex './.*/result_model_1_ptm.pkl' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "results/${new:2}"' \;
 
 
 Compress finished PDBs:
