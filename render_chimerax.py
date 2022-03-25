@@ -1,5 +1,4 @@
 from biopandas.pdb import PandasPdb
-from os.path import exists
 import numpy as np
 
 PATH_XLS_INTRA_NONRED = 'XLs_intra_nonred.csv'
@@ -121,7 +120,7 @@ for protein in proteins:
     run(session, 'set bgColor white')
     run(session, 'lighting flat')
     run(session, 'view clip false')
-    run(session, 'hide #3.1 models')
+    # run(session, 'hide #3.1 models')
     run(session, 'distance style dashes 0 radius 0.2 color black')
     run(session, 'save chx/{}.cxs format session'.format(sanitize_protein(protein)))
     run(session, 'log save chx/{}_log.html'.format(sanitize_protein(protein)))
