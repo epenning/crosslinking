@@ -64,11 +64,16 @@ from chimerax.core.commands import run
 CROSSLINK_THRESHOLD = 30
 
 
-def get_xl_violation_pairs(protein_name, xls):
+def split_xl_agreement_violation_pairs(protein_name, xls):
     protein_xls = xls.loc[xls['Protein1'] == protein_name]
+    protein_xls_agreed = protein_xls[protein_xls['af_distance'] <= CROSSLINK_THRESHOLD]
     protein_xls_violated = protein_xls[protein_xls['af_distance'] > CROSSLINK_THRESHOLD]
+    xl_positions_agreed = protein_xls_agreed[['newRes1', 'newRes2']]
     xl_positions_violated = protein_xls_violated[['newRes1', 'newRes2']]
-    return [tuple(x) for x in xl_positions_violated.to_numpy()]
+    xl_agreements = [tuple(x) for x in xl_positions_agreed.to_numpy()]
+    xl_violations = [tuple(x) for x in xl_positions_violated.to_numpy()]
+    return xl_agreements, xl_violations
+
 
 XLs_intra_nonred = pd.read_csv(PATH_XLS_INTRA_NONRED)
 XLs_intra_nonred.loc[:, 'af_distance'] = None
@@ -96,7 +101,7 @@ for protein in proteins:
     pdb = read_protein_pdb(protein, PTM_PDB_SUFFIX)
     fill_xls_from_pdb(protein, CROSSLINK_THRESHOLD, pdb, XLs_intra_nonred)
 
-    violated_xl_pairs = get_xl_violation_pairs(protein, XLs_intra_nonred)
+    agreed_xl_pairs, violated_xl_pairs = split_xl_agreement_violation_pairs(protein, XLs_intra_nonred)
 
     # Chimera X
     run(session, 'close session')
@@ -115,13 +120,18 @@ for protein in proteins:
 
     # Draw violations
     for pair in violated_xl_pairs:
-        run(session, 'distance #1:{}@ca #1:{}@ca'.format(pair[0], pair[1]))
+        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.2 color black'.format(pair[0], pair[1]))
+    # run(session, 'distance style dashes 0 radius 0.2 color black')
 
-    run(session, 'set bgColor white')
+    # Draw agreements
+    for pair in agreed_xl_pairs:
+        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.2 color white'.format(pair[0], pair[1]))
+
+    run(session, 'set bgColor gray')
     run(session, 'lighting flat')
     run(session, 'view clip false')
-    # run(session, 'hide #3.1 models')
-    run(session, 'distance style dashes 0 radius 0.2 color black')
+    run(session, 'hide #3.1 models')
+    # now do the agreement distances
     run(session, 'save chx/{}.cxs format session'.format(sanitize_protein(protein)))
     run(session, 'log save chx/{}_log.html'.format(sanitize_protein(protein)))
 
