@@ -136,4 +136,6 @@ for protein in proteins:
     run(session, 'log save chx/{}_log.html'.format(sanitize_protein(protein)))
 
 
+# Caitie used darkred for violation and darkblue for satisfied
+
 
