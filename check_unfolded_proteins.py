@@ -1,6 +1,13 @@
 from os.path import exists
 
 
+UNRELAXED_PDB_SUFFIX = '-unrelaxed_model_1.pdb'
+RELAXED_PDB_SUFFIX = '-relaxed_model_1.pdb'
+PTM_PDB_SUFFIX = '-relaxed_model_1_ptm.pdb'
+RESULTS_PKL_SUFFIX = '-result_model_1_ptm.pkl'
+PAE_PKL_SUFFIX = '-pae_model_1_ptm.pkl'
+
+
 def sanitize_protein(protein_id):
     """Replace / in protein ID with _ for compatibility with file system"""
     return protein_id.replace("/", "_")
@@ -123,3 +130,5 @@ for protein_XLs in all_proteins:
         unfolded_proteins.append(protein)
 
 print(unfolded_proteins)
+
+#%%
