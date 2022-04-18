@@ -1,0 +1,365 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title> ChimeraX Log </title>
+<script type="text/javascript">
+window.onload = function() {
+  cxlinks_base="http://www.rbvi.ucsf.edu/chimerax/docs/"
+  if(!window.navigator.userAgent.includes("ChimeraX")){
+    window.onclick = function(e){
+      if(e.target.tagName.toLowerCase()!="a")
+	return true;
+      var url=e.target.getAttribute("href").toLowerCase();
+      if(url.startsWith("help:")){
+	window.location.href = cxlinks_base + url.substring(5);
+	return false;
+      }
+      if(url.startsWith("cxcmd:")){
+	alert("This link only works in a ChimeraX browser and would execute a command.");
+	return false;
+      }
+      return true;
+    }
+    var ls=document.links;
+    for(var i=0;i<ls.length;i++){
+      var link=ls[i];
+      var url=link.getAttribute("href").toLowerCase();
+      if(url.startsWith("cxcmd:"))
+	link.style.color="darkred";
+    }
+  }
+};
+</script>
+</head>
+<h1> ChimeraX Log </h1>
+<style>
+
+.cxcmd {
+    display: block;
+    font-weight: bold;
+    margin-top: .5em;
+    background-color: #ddd;
+}
+a.no_underline {
+    text-decoration: none;
+}
+
+.cxcmd_as_doc {
+    display: inline;
+}
+.cxcmd_as_cmd {
+    display: none;
+}
+</style>
+UCSF ChimeraX version: 1.3 (2021-12-08)<br>
+© 2016-2021 Regents of the University of California.  All rights reserved.<br>
+<a href="cxcmd:help help:credits.html">How to cite UCSF ChimeraX</a><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_5.pdb #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_4.pdb #2</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #2/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #2/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_3.pdb #3</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #3/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #3/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_2.pdb #4</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #4/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #4/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_1.pdb #5</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #5/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #5/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/matchmaker.html">mmaker</a> #2-5 to #1</div><div class="cxcmd_as_cmd"><a href="cxcmd:mmaker #2-5 to #1">mmaker #2-5 to #1</a></div></div>
+                    <table border=1 cellpadding=4 cellspacing=0>
+                        <tr>
+                            <th colspan="2">Parameters</th>
+                        </tr>
+                        <tr>
+                            <td>Chain pairing</td>
+                            <td>bb</td>
+                        </tr>
+                        <tr>
+                            <td>Alignment algorithm</td>
+                            <td>Needleman-Wunsch</td>
+                        </tr>
+                        <tr>
+                            <td>Similarity matrix</td>
+                            <td>BLOSUM-62</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SS fraction</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr>
+                            <td>Gap open (HH/SS/other)</td>
+                            <td>18/18/6</td>
+                        </tr>
+                        <tr>
+                            <td>Gap extend</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>SS matrix</td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <th></th> <th>H</th> <th>S</th> <th>O</th>
+                                    </tr>
+                                    <tr>
+                                        <th>H</th> <td align="right">6</td> <td align="right">-9</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>S</th> <td></td> <td align="right">6</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O</th> <td></td> <td></td> <td align="right">4</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    
+                        <tr> <td>Iteration cutoff</td> <td>2</td></tr>
+                    </table>
+                <br/>Matchmaker EEF2-relaxed_model_5.pdb, chain A (#1) with EEF2-relaxed_model_4.pdb, chain A (#2), sequence alignment score = 4367.8<br>
+RMSD between 838 pruned atom pairs is 0.454 angstroms; (across all 838 pairs: 0.454)<br>
+<br>
+Matchmaker EEF2-relaxed_model_5.pdb, chain A (#1) with EEF2-relaxed_model_3.pdb, chain A (#3), sequence alignment score = 4369.6<br>
+RMSD between 838 pruned atom pairs is 0.553 angstroms; (across all 838 pairs: 0.553)<br>
+<br>
+Matchmaker EEF2-relaxed_model_5.pdb, chain A (#1) with EEF2-relaxed_model_2.pdb, chain A (#4), sequence alignment score = 4366<br>
+RMSD between 838 pruned atom pairs is 0.612 angstroms; (across all 838 pairs: 0.612)<br>
+<br>
+Matchmaker EEF2-relaxed_model_5.pdb, chain A (#1) with EEF2-relaxed_model_1.pdb, chain A (#5), sequence alignment score = 4339.6<br>
+RMSD between 836 pruned atom pairs is 0.809 angstroms; (across all 838 pairs: 0.815)<br>
+<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs</div><div class="cxcmd_as_cmd"><a href="cxcmd:save /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs">save /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/close.html#session">close session</a></div><div class="cxcmd_as_cmd"><a href="cxcmd:close session">close session</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_5.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_5.pdb #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_4.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_4.pdb #2</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #2/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #2/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_3.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_3.pdb #3</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #3/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #3/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_2.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_2.pdb #4</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #4/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #4/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb">open /Users/erin/Work/crosslinking/models/EEF2-relaxed_model_1.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_1.pdb #5</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #5/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #5/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/matchmaker.html">mmaker</a> #1-4 to #5</div><div class="cxcmd_as_cmd"><a href="cxcmd:mmaker #1-4 to #5">mmaker #1-4 to #5</a></div></div>
+                    <table border=1 cellpadding=4 cellspacing=0>
+                        <tr>
+                            <th colspan="2">Parameters</th>
+                        </tr>
+                        <tr>
+                            <td>Chain pairing</td>
+                            <td>bb</td>
+                        </tr>
+                        <tr>
+                            <td>Alignment algorithm</td>
+                            <td>Needleman-Wunsch</td>
+                        </tr>
+                        <tr>
+                            <td>Similarity matrix</td>
+                            <td>BLOSUM-62</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SS fraction</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr>
+                            <td>Gap open (HH/SS/other)</td>
+                            <td>18/18/6</td>
+                        </tr>
+                        <tr>
+                            <td>Gap extend</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>SS matrix</td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <th></th> <th>H</th> <th>S</th> <th>O</th>
+                                    </tr>
+                                    <tr>
+                                        <th>H</th> <td align="right">6</td> <td align="right">-9</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>S</th> <td></td> <td align="right">6</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O</th> <td></td> <td></td> <td align="right">4</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    
+                        <tr> <td>Iteration cutoff</td> <td>2</td></tr>
+                    </table>
+                <br/>Matchmaker EEF2-relaxed_model_1.pdb, chain A (#5) with EEF2-relaxed_model_5.pdb, chain A (#1), sequence alignment score = 4339.6<br>
+RMSD between 836 pruned atom pairs is 0.809 angstroms; (across all 838 pairs: 0.815)<br>
+<br>
+Matchmaker EEF2-relaxed_model_1.pdb, chain A (#5) with EEF2-relaxed_model_4.pdb, chain A (#2), sequence alignment score = 4345<br>
+RMSD between 782 pruned atom pairs is 0.817 angstroms; (across all 838 pairs: 1.012)<br>
+<br>
+Matchmaker EEF2-relaxed_model_1.pdb, chain A (#5) with EEF2-relaxed_model_3.pdb, chain A (#3), sequence alignment score = 4333.6<br>
+RMSD between 810 pruned atom pairs is 0.757 angstroms; (across all 838 pairs: 0.860)<br>
+<br>
+Matchmaker EEF2-relaxed_model_1.pdb, chain A (#5) with EEF2-relaxed_model_2.pdb, chain A (#4), sequence alignment score = 4336.6<br>
+RMSD between 838 pruned atom pairs is 0.640 angstroms; (across all 838 pairs: 0.640)<br>
+<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs</div><div class="cxcmd_as_cmd"><a href="cxcmd:save /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs">save /Users/erin/Work/crosslinking/chx/EEF2_Aligned_5_Predictions.cxs</a></div></div></body>
+</html>
