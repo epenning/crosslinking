@@ -1,8 +1,8 @@
 {
     "plddts": {
-        "model_1": 64.36741623007288
+        "model_1_pred_0": 64.02626565853384
     },
     "order": [
-        "model_1"
+        "model_1_pred_0"
     ]
 }
