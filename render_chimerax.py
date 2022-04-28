@@ -78,7 +78,7 @@ def split_xl_agreement_violation_pairs(protein_name, xls):
 XLs_intra_nonred = pd.read_csv(PATH_XLS_INTRA_NONRED)
 XLs_intra_nonred.loc[:, 'af_distance'] = None
 
-proteins = ['HYDIN', 'IFT172', 'IDP2\xa0', 'Q23TY1', 'Q234E6', 'I7MHP2', 'CDC27', 'SARS', 'Q24GN6', 'DLD', 'EEF2',
+proteins = ['IFT172', 'IDP2\xa0', 'Q23TY1', 'Q234E6', 'I7MHP2', 'CDC27', 'SARS', 'Q24GN6', 'DLD', 'EEF2',
                 'Q24FH6', 'GNPDA1/2', 'Q23A15', 'PGK1', 'SPEF2', 'EIF4A', 'Q22F29', 'Q23DV1', 'Q22T19', 'I7LWT9',
                 'I7ML23', 'ILS1', 'I7LUZ1', 'DARS', 'Q24CJ0', 'CASC1', 'BBC52', 'CAPN-1', 'I7M2E8', 'I7M2A9', 'EPC1',
                 'KARS', 'I7LXF9', 'I7LX35', 'GRS1', 'I7MCM4', 'EARS', 'YARS', 'I7MJ59', 'I7MKN3', 'TFA', 'I7M3K6',
@@ -92,7 +92,10 @@ proteins = ['HYDIN', 'IFT172', 'IDP2\xa0', 'Q23TY1', 'Q234E6', 'I7MHP2', 'CDC27'
 
 for protein in proteins:
     # Get the XL violations
-    pdb = read_protein_pdb(protein, PTM_PDB_SUFFIX)
+    try:
+        pdb = read_protein_pdb(protein, PTM_PDB_SUFFIX)
+    except FileNotFoundError:
+        continue
     fill_xls_from_pdb(protein, CROSSLINK_THRESHOLD, pdb, XLs_intra_nonred)
 
     agreed_xl_pairs, violated_xl_pairs = split_xl_agreement_violation_pairs(protein, XLs_intra_nonred)
@@ -103,10 +106,14 @@ for protein in proteins:
     run(session, 'cd /Users/erin/Work/crosslinking')
 
     ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + PTM_PDB_SUFFIX
-    protein_model = run(session, 'open ' + ptm_pdb_filepath)
+    try:
+        protein_model = run(session, 'open ' + ptm_pdb_filepath)
+    except FileNotFoundError:
+        continue
 
     unrelaxed_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PDB_SUFFIX
     opened_models = run(session, 'open ' + unrelaxed_pdb_filepath)
+
     run(session, 'align #1@ca toAtoms #2@ca')
     run(session, 'hide #2 models')
 
@@ -114,14 +121,14 @@ for protein in proteins:
 
     # Draw violations
     for pair in violated_xl_pairs:
-        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.2 color darkred'.format(pair[0], pair[1]))
+        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.5 color darkred'.format(pair[0], pair[1]))
     # run(session, 'distance style dashes 0 radius 0.2 color black')
 
     # Draw agreements
     for pair in agreed_xl_pairs:
-        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.2 color darkblue'.format(pair[0], pair[1]))
+        run(session, 'distance #1:{}@ca #1:{}@ca dashes 0 radius 0.5 color darkblue'.format(pair[0], pair[1]))
 
-    run(session, 'set bgColor gray')
+    run(session, 'set bgColor white')
     run(session, 'lighting flat')
     run(session, 'view clip false')
     run(session, 'hide #3.1 models')
