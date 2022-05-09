@@ -6,6 +6,8 @@ find . -type f -name relaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr "." 
 
 Generate commands to copy finished PDBs to models/<protein>-(un)relaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
+
+find * -name unrelaxed_model_1_pred_0.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 find * -name relaxed_model_1_pred_0.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 
 
