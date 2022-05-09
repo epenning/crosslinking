@@ -1,0 +1,182 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title> ChimeraX Log </title>
+<script type="text/javascript">
+window.onload = function() {
+  cxlinks_base="http://www.rbvi.ucsf.edu/chimerax/docs/"
+  if(!window.navigator.userAgent.includes("ChimeraX")){
+    window.onclick = function(e){
+      if(e.target.tagName.toLowerCase()!="a")
+	return true;
+      var url=e.target.getAttribute("href").toLowerCase();
+      if(url.startsWith("help:")){
+	window.location.href = cxlinks_base + url.substring(5);
+	return false;
+      }
+      if(url.startsWith("cxcmd:")){
+	alert("This link only works in a ChimeraX browser and would execute a command.");
+	return false;
+      }
+      return true;
+    }
+    var ls=document.links;
+    for(var i=0;i<ls.length;i++){
+      var link=ls[i];
+      var url=link.getAttribute("href").toLowerCase();
+      if(url.startsWith("cxcmd:"))
+	link.style.color="darkred";
+    }
+  }
+};
+</script>
+</head>
+<h1> ChimeraX Log </h1>
+<style>
+
+.cxcmd {
+    display: block;
+    font-weight: bold;
+    margin-top: .5em;
+    background-color: #ddd;
+}
+a.no_underline {
+    text-decoration: none;
+}
+
+.cxcmd_as_doc {
+    display: inline;
+}
+.cxcmd_as_cmd {
+    display: none;
+}
+</style>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/cd.html">cd</a> /Users/erin/Work/crosslinking</div><div class="cxcmd_as_cmd"><a href="cxcmd:cd /Users/erin/Work/crosslinking">cd /Users/erin/Work/crosslinking</a></div></div>Current working directory is: /Users/erin/Work/crosslinking<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> models/EEF2-relaxed_model_1_ptm.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open models/EEF2-relaxed_model_1_ptm.pdb">open models/EEF2-relaxed_model_1_ptm.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-relaxed_model_1_ptm.pdb #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> models/EEF2-unrelaxed_model_1.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open models/EEF2-unrelaxed_model_1.pdb">open models/EEF2-unrelaxed_model_1.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for EEF2-unrelaxed_model_1.pdb #2</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #2/A:1-838">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #2/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/matchmaker.html">matchmaker</a> #2@ca to #1@ca</div><div class="cxcmd_as_cmd"><a href="cxcmd:matchmaker #2@ca to #1@ca">matchmaker #2@ca to #1@ca</a></div></div>
+                    <table border=1 cellpadding=4 cellspacing=0>
+                        <tr>
+                            <th colspan="2">Parameters</th>
+                        </tr>
+                        <tr>
+                            <td>Chain pairing</td>
+                            <td>bb</td>
+                        </tr>
+                        <tr>
+                            <td>Alignment algorithm</td>
+                            <td>Needleman-Wunsch</td>
+                        </tr>
+                        <tr>
+                            <td>Similarity matrix</td>
+                            <td>BLOSUM-62</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SS fraction</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr>
+                            <td>Gap open (HH/SS/other)</td>
+                            <td>18/18/6</td>
+                        </tr>
+                        <tr>
+                            <td>Gap extend</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>SS matrix</td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <th></th> <th>H</th> <th>S</th> <th>O</th>
+                                    </tr>
+                                    <tr>
+                                        <th>H</th> <td align="right">6</td> <td align="right">-9</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>S</th> <td></td> <td align="right">6</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O</th> <td></td> <td></td> <td align="right">4</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    
+                        <tr> <td>Iteration cutoff</td> <td>2</td></tr>
+                    </table>
+                <br/>Matchmaker EEF2-relaxed_model_1_ptm.pdb, chain A (#1) with EEF2-unrelaxed_model_1.pdb, chain A (#2), sequence alignment score = 4352.2<br>
+RMSD between 838 pruned atom pairs is 0.544 angstroms; (across all 838 pairs: 0.544)<br>
+<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/show.html#hide">hide</a> #2 models</div><div class="cxcmd_as_cmd"><a href="cxcmd:hide #2 models">hide #2 models</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> white</div><div class="cxcmd_as_cmd"><a href="cxcmd:color white">color white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/transparency.html">transparency</a> #2 75 All</div><div class="cxcmd_as_cmd"><a href="cxcmd:transparency #2 75 All">transparency #2 75 All</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:0-38 #440154</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:0-38 #440154">color #1,2:0-38 #440154</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:38-102 #482677</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:38-102 #482677">color #1,2:38-102 #482677</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:102-270 #39568C</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:102-270 #39568C">color #1,2:102-270 #39568C</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:270-318 #2D708E</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:270-318 #2D708E">color #1,2:270-318 #2D708E</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:318-486 #238A8D</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:318-486 #238A8D">color #1,2:318-486 #238A8D</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:486-549 #29AF7F</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:486-549 #29AF7F">color #1,2:486-549 #29AF7F</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:549-707 #73D055</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:549-707 #73D055">color #1,2:549-707 #73D055</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:707-804 #B8DE29</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:707-804 #B8DE29">color #1,2:707-804 #B8DE29</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:804-838 #FDE725</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:804-838 #FDE725">color #1,2:804-838 #FDE725</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:612@ca #1:417@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:612@ca #1:417@ca dashes 0 radius 0.5 color darkred">distance #1:612@ca #1:417@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 612 CA and LYS 417 CA: 33.470Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:612@ca #1:423@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:612@ca #1:423@ca dashes 0 radius 0.5 color darkred">distance #1:612@ca #1:423@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 612 CA and LYS 423 CA: 43.983Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:490@ca #1:341@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:490@ca #1:341@ca dashes 0 radius 0.5 color darkred">distance #1:490@ca #1:341@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 490 CA and LYS 341 CA: 54.451Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:604@ca #1:423@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:604@ca #1:423@ca dashes 0 radius 0.5 color darkred">distance #1:604@ca #1:423@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 604 CA and LYS 423 CA: 30.321Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:604@ca #1:490@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:604@ca #1:490@ca dashes 0 radius 0.5 color darkred">distance #1:604@ca #1:490@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 604 CA and LYS 490 CA: 44.269Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:385@ca #1:49@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:385@ca #1:49@ca dashes 0 radius 0.5 color darkred">distance #1:385@ca #1:49@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 385 CA and LYS 49 CA: 32.852Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:617@ca #1:416@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:617@ca #1:416@ca dashes 0 radius 0.5 color darkred">distance #1:617@ca #1:416@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 617 CA and LYS 416 CA: 34.878Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:490@ca #1:476@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:490@ca #1:476@ca dashes 0 radius 0.5 color darkred">distance #1:490@ca #1:476@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 490 CA and LYS 476 CA: 36.005Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:825@ca #1:385@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:825@ca #1:385@ca dashes 0 radius 0.5 color darkred">distance #1:825@ca #1:385@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 825 CA and LYS 385 CA: 43.332Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:604@ca #1:385@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:604@ca #1:385@ca dashes 0 radius 0.5 color darkred">distance #1:604@ca #1:385@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 604 CA and LYS 385 CA: 40.394Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:837@ca #1:573@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:837@ca #1:573@ca dashes 0 radius 0.5 color darkblue">distance #1:837@ca #1:573@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 837 CA and LYS 573 CA: 9.026Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:250@ca #1:237@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:250@ca #1:237@ca dashes 0 radius 0.5 color cyan">distance #1:250@ca #1:237@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 250 CA and LYS 237 CA: 11.621Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:237@ca #1:233@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:237@ca #1:233@ca dashes 0 radius 0.5 color cyan">distance #1:237@ca #1:233@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 237 CA and LYS 233 CA: 6.402Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:423@ca #1:385@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:423@ca #1:385@ca dashes 0 radius 0.5 color cyan">distance #1:423@ca #1:385@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 423 CA and LYS 385 CA: 22.132Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:476@ca #1:144@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:476@ca #1:144@ca dashes 0 radius 0.5 color darkblue">distance #1:476@ca #1:144@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 476 CA and LYS 144 CA: 13.504Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:604@ca #1:476@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:604@ca #1:476@ca dashes 0 radius 0.5 color darkblue">distance #1:604@ca #1:476@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 604 CA and LYS 476 CA: 17.206Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:341@ca #1:144@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:341@ca #1:144@ca dashes 0 radius 0.5 color darkblue">distance #1:341@ca #1:144@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 341 CA and LYS 144 CA: 12.075Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:647@ca #1:584@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:647@ca #1:584@ca dashes 0 radius 0.5 color cyan">distance #1:647@ca #1:584@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 647 CA and LYS 584 CA: 15.120Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:598@ca #1:476@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:598@ca #1:476@ca dashes 0 radius 0.5 color darkblue">distance #1:598@ca #1:476@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 598 CA and LYS 476 CA: 9.442Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:476@ca #1:416@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:476@ca #1:416@ca dashes 0 radius 0.5 color cyan">distance #1:476@ca #1:416@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 476 CA and LYS 416 CA: 23.617Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:423@ca #1:404@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:423@ca #1:404@ca dashes 0 radius 0.5 color cyan">distance #1:423@ca #1:404@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 423 CA and LYS 404 CA: 5.636Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:551@ca #1:490@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:551@ca #1:490@ca dashes 0 radius 0.5 color darkblue">distance #1:551@ca #1:490@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 551 CA and LYS 490 CA: 9.688Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:311@ca #1:153@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:311@ca #1:153@ca dashes 0 radius 0.5 color darkblue">distance #1:311@ca #1:153@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 311 CA and LYS 153 CA: 13.822Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:617@ca #1:598@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:617@ca #1:598@ca dashes 0 radius 0.5 color cyan">distance #1:617@ca #1:598@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 617 CA and LYS 598 CA: 14.788Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:503@ca #1:385@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:503@ca #1:385@ca dashes 0 radius 0.5 color darkblue">distance #1:503@ca #1:385@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 503 CA and LYS 385 CA: 13.341Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:364@ca #1:341@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:364@ca #1:341@ca dashes 0 radius 0.5 color cyan">distance #1:364@ca #1:341@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 364 CA and LYS 341 CA: 8.518Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:249@ca #1:226@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:249@ca #1:226@ca dashes 0 radius 0.5 color cyan">distance #1:249@ca #1:226@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 249 CA and LYS 226 CA: 12.542Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:369@ca #1:361@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:369@ca #1:361@ca dashes 0 radius 0.5 color cyan">distance #1:369@ca #1:361@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 369 CA and LYS 361 CA: 11.581Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:490@ca #1:385@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:490@ca #1:385@ca dashes 0 radius 0.5 color darkblue">distance #1:490@ca #1:385@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 490 CA and LYS 385 CA: 21.106Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:153@ca #1:32@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:153@ca #1:32@ca dashes 0 radius 0.5 color darkblue">distance #1:153@ca #1:32@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 153 CA and LYS 32 CA: 10.503Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:385@ca #1:71@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:385@ca #1:71@ca dashes 0 radius 0.5 color darkblue">distance #1:385@ca #1:71@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 385 CA and LYS 71 CA: 17.732Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:503@ca #1:490@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:503@ca #1:490@ca dashes 0 radius 0.5 color cyan">distance #1:503@ca #1:490@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 503 CA and LYS 490 CA: 18.586Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:476@ca #1:459@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:476@ca #1:459@ca dashes 0 radius 0.5 color cyan">distance #1:476@ca #1:459@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 476 CA and LYS 459 CA: 12.751Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:341@ca #1:146@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:341@ca #1:146@ca dashes 0 radius 0.5 color darkblue">distance #1:341@ca #1:146@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 341 CA and LYS 146 CA: 11.153Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:612@ca #1:608@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:612@ca #1:608@ca dashes 0 radius 0.5 color cyan">distance #1:612@ca #1:608@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between EEF2-relaxed_model_1_ptm.pdb #1/A LYS 612 CA and LYS 608 CA: 6.105Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/set.html">set</a> bgColor white</div><div class="cxcmd_as_cmd"><a href="cxcmd:set bgColor white">set bgColor white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html">lighting</a> soft depthCue false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting soft depthCue false">lighting soft depthCue false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html#model">lighting model</a> #3 directional false shadows false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting model #3 directional false shadows false">lighting model #3 directional false shadows false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/view.html">view</a> clip false</div><div class="cxcmd_as_cmd"><a href="cxcmd:view clip false">view clip false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/show.html#hide">hide</a> #3.1 models</div><div class="cxcmd_as_cmd"><a href="cxcmd:hide #3.1 models">hide #3.1 models</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> chx/PTM/EEF2.cxs format session</div><div class="cxcmd_as_cmd"><a href="cxcmd:save chx/PTM/EEF2.cxs format session">save chx/PTM/EEF2.cxs format session</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/log.html#save">log save</a> chx/PTM/EEF2_log.html</div><div class="cxcmd_as_cmd"><a href="cxcmd:log save chx/PTM/EEF2_log.html">log save chx/PTM/EEF2_log.html</a></div></div></body>
+</html>

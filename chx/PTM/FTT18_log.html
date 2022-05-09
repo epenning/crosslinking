@@ -1,0 +1,172 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title> ChimeraX Log </title>
+<script type="text/javascript">
+window.onload = function() {
+  cxlinks_base="http://www.rbvi.ucsf.edu/chimerax/docs/"
+  if(!window.navigator.userAgent.includes("ChimeraX")){
+    window.onclick = function(e){
+      if(e.target.tagName.toLowerCase()!="a")
+	return true;
+      var url=e.target.getAttribute("href").toLowerCase();
+      if(url.startsWith("help:")){
+	window.location.href = cxlinks_base + url.substring(5);
+	return false;
+      }
+      if(url.startsWith("cxcmd:")){
+	alert("This link only works in a ChimeraX browser and would execute a command.");
+	return false;
+      }
+      return true;
+    }
+    var ls=document.links;
+    for(var i=0;i<ls.length;i++){
+      var link=ls[i];
+      var url=link.getAttribute("href").toLowerCase();
+      if(url.startsWith("cxcmd:"))
+	link.style.color="darkred";
+    }
+  }
+};
+</script>
+</head>
+<h1> ChimeraX Log </h1>
+<style>
+
+.cxcmd {
+    display: block;
+    font-weight: bold;
+    margin-top: .5em;
+    background-color: #ddd;
+}
+a.no_underline {
+    text-decoration: none;
+}
+
+.cxcmd_as_doc {
+    display: inline;
+}
+.cxcmd_as_cmd {
+    display: none;
+}
+</style>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/cd.html">cd</a> /Users/erin/Work/crosslinking</div><div class="cxcmd_as_cmd"><a href="cxcmd:cd /Users/erin/Work/crosslinking">cd /Users/erin/Work/crosslinking</a></div></div>Current working directory is: /Users/erin/Work/crosslinking<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> models/FTT18-relaxed_model_1_ptm.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open models/FTT18-relaxed_model_1_ptm.pdb">open models/FTT18-relaxed_model_1_ptm.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for FTT18-relaxed_model_1_ptm.pdb #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-244">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> models/FTT18-unrelaxed_model_1.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open models/FTT18-unrelaxed_model_1.pdb">open models/FTT18-unrelaxed_model_1.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for FTT18-unrelaxed_model_1.pdb #2</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select #2/A:1-244">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #2/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/matchmaker.html">matchmaker</a> #2@ca to #1@ca</div><div class="cxcmd_as_cmd"><a href="cxcmd:matchmaker #2@ca to #1@ca">matchmaker #2@ca to #1@ca</a></div></div>
+                    <table border=1 cellpadding=4 cellspacing=0>
+                        <tr>
+                            <th colspan="2">Parameters</th>
+                        </tr>
+                        <tr>
+                            <td>Chain pairing</td>
+                            <td>bb</td>
+                        </tr>
+                        <tr>
+                            <td>Alignment algorithm</td>
+                            <td>Needleman-Wunsch</td>
+                        </tr>
+                        <tr>
+                            <td>Similarity matrix</td>
+                            <td>BLOSUM-62</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>SS fraction</td>
+                            <td>0.3</td>
+                        </tr>
+                        <tr>
+                            <td>Gap open (HH/SS/other)</td>
+                            <td>18/18/6</td>
+                        </tr>
+                        <tr>
+                            <td>Gap extend</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>SS matrix</td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <th></th> <th>H</th> <th>S</th> <th>O</th>
+                                    </tr>
+                                    <tr>
+                                        <th>H</th> <td align="right">6</td> <td align="right">-9</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>S</th> <td></td> <td align="right">6</td> <td align="right">-6</td>
+                                    </tr>
+                                    <tr>
+                                        <th>O</th> <td></td> <td></td> <td align="right">4</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    
+                        <tr> <td>Iteration cutoff</td> <td>2</td></tr>
+                    </table>
+                <br/>Matchmaker FTT18-relaxed_model_1_ptm.pdb, chain A (#1) with FTT18-unrelaxed_model_1.pdb, chain A (#2), sequence alignment score = 1252.2<br>
+RMSD between 244 pruned atom pairs is 0.152 angstroms; (across all 244 pairs: 0.152)<br>
+<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/show.html#hide">hide</a> #2 models</div><div class="cxcmd_as_cmd"><a href="cxcmd:hide #2 models">hide #2 models</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> white</div><div class="cxcmd_as_cmd"><a href="cxcmd:color white">color white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/transparency.html">transparency</a> #2 75 All</div><div class="cxcmd_as_cmd"><a href="cxcmd:transparency #2 75 All">transparency #2 75 All</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1,2:0-231 #440154</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1,2:0-231 #440154">color #1,2:0-231 #440154</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:70@ca #1:30@ca dashes 0 radius 0.5 color magenta</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:70@ca #1:30@ca dashes 0 radius 0.5 color magenta">distance #1:70@ca #1:30@ca dashes 0 radius 0.5 color magenta</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 70 CA and LYS 30 CA: 42.791Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:74@ca #1:13@ca dashes 0 radius 0.5 color magenta</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:74@ca #1:13@ca dashes 0 radius 0.5 color magenta">distance #1:74@ca #1:13@ca dashes 0 radius 0.5 color magenta</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 74 CA and LYS 13 CA: 46.720Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:70@ca #1:13@ca dashes 0 radius 0.5 color magenta</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:70@ca #1:13@ca dashes 0 radius 0.5 color magenta">distance #1:70@ca #1:13@ca dashes 0 radius 0.5 color magenta</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 70 CA and LYS 13 CA: 40.716Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:77@ca #1:13@ca dashes 0 radius 0.5 color magenta</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:77@ca #1:13@ca dashes 0 radius 0.5 color magenta">distance #1:77@ca #1:13@ca dashes 0 radius 0.5 color magenta</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 77 CA and LYS 13 CA: 45.596Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:215@ca #1:123@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:215@ca #1:123@ca dashes 0 radius 0.5 color cyan">distance #1:215@ca #1:123@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 215 CA and LYS 123 CA: 20.279Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:142@ca #1:70@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:142@ca #1:70@ca dashes 0 radius 0.5 color cyan">distance #1:142@ca #1:70@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 142 CA and LYS 70 CA: 27.236Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:86@ca #1:74@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:86@ca #1:74@ca dashes 0 radius 0.5 color cyan">distance #1:86@ca #1:74@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 86 CA and LYS 74 CA: 18.330Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:51@ca #1:29@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:51@ca #1:29@ca dashes 0 radius 0.5 color cyan">distance #1:51@ca #1:29@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 51 CA and LYS 29 CA: 14.281Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:30@ca #1:13@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:30@ca #1:13@ca dashes 0 radius 0.5 color cyan">distance #1:30@ca #1:13@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 30 CA and LYS 13 CA: 13.795Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:77@ca #1:70@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:77@ca #1:70@ca dashes 0 radius 0.5 color cyan">distance #1:77@ca #1:70@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 77 CA and LYS 70 CA: 12.391Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:154@ca #1:142@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:154@ca #1:142@ca dashes 0 radius 0.5 color cyan">distance #1:154@ca #1:142@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 154 CA and LYS 142 CA: 18.254Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:51@ca #1:13@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:51@ca #1:13@ca dashes 0 radius 0.5 color cyan">distance #1:51@ca #1:13@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 51 CA and LYS 13 CA: 14.952Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:29@ca #1:13@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:29@ca #1:13@ca dashes 0 radius 0.5 color cyan">distance #1:29@ca #1:13@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 29 CA and LYS 13 CA: 13.415Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:51@ca #1:30@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:51@ca #1:30@ca dashes 0 radius 0.5 color cyan">distance #1:51@ca #1:30@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 51 CA and LYS 30 CA: 17.773Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:154@ca #1:51@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:154@ca #1:51@ca dashes 0 radius 0.5 color cyan">distance #1:154@ca #1:51@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 154 CA and LYS 51 CA: 21.556Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:190@ca #1:142@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:190@ca #1:142@ca dashes 0 radius 0.5 color cyan">distance #1:190@ca #1:142@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 190 CA and LYS 142 CA: 18.402Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:154@ca #1:110@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:154@ca #1:110@ca dashes 0 radius 0.5 color cyan">distance #1:154@ca #1:110@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 154 CA and LYS 110 CA: 13.780Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:125@ca #1:110@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:125@ca #1:110@ca dashes 0 radius 0.5 color cyan">distance #1:125@ca #1:110@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 125 CA and LYS 110 CA: 12.875Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:70@ca #1:51@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:70@ca #1:51@ca dashes 0 radius 0.5 color cyan">distance #1:70@ca #1:51@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 70 CA and LYS 51 CA: 28.176Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:142@ca #1:125@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:142@ca #1:125@ca dashes 0 radius 0.5 color cyan">distance #1:142@ca #1:125@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 142 CA and LYS 125 CA: 15.502Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:154@ca #1:125@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:154@ca #1:125@ca dashes 0 radius 0.5 color cyan">distance #1:154@ca #1:125@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 154 CA and LYS 125 CA: 10.442Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:215@ca #1:51@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:215@ca #1:51@ca dashes 0 radius 0.5 color cyan">distance #1:215@ca #1:51@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 215 CA and LYS 51 CA: 20.454Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:88@ca #1:30@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:88@ca #1:30@ca dashes 0 radius 0.5 color cyan">distance #1:88@ca #1:30@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 88 CA and LYS 30 CA: 26.591Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:143@ca #1:125@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:143@ca #1:125@ca dashes 0 radius 0.5 color cyan">distance #1:143@ca #1:125@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 143 CA and LYS 125 CA: 13.135Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:123@ca #1:51@ca dashes 0 radius 0.5 color cyan</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:123@ca #1:51@ca dashes 0 radius 0.5 color cyan">distance #1:123@ca #1:51@ca dashes 0 radius 0.5 color cyan</a></div></div>Distance between FTT18-relaxed_model_1_ptm.pdb #1/A LYS 123 CA and LYS 51 CA: 13.107Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/set.html">set</a> bgColor white</div><div class="cxcmd_as_cmd"><a href="cxcmd:set bgColor white">set bgColor white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html">lighting</a> soft depthCue false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting soft depthCue false">lighting soft depthCue false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html#model">lighting model</a> #3 directional false shadows false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting model #3 directional false shadows false">lighting model #3 directional false shadows false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/view.html">view</a> clip false</div><div class="cxcmd_as_cmd"><a href="cxcmd:view clip false">view clip false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/show.html#hide">hide</a> #3.1 models</div><div class="cxcmd_as_cmd"><a href="cxcmd:hide #3.1 models">hide #3.1 models</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> chx/PTM/FTT18.cxs format session</div><div class="cxcmd_as_cmd"><a href="cxcmd:save chx/PTM/FTT18.cxs format session">save chx/PTM/FTT18.cxs format session</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/log.html#save">log save</a> chx/PTM/FTT18_log.html</div><div class="cxcmd_as_cmd"><a href="cxcmd:log save chx/PTM/FTT18_log.html">log save chx/PTM/FTT18_log.html</a></div></div></body>
+</html>

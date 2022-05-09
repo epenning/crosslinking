@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title> ChimeraX Log </title>
+<script type="text/javascript">
+window.onload = function() {
+  cxlinks_base="http://www.rbvi.ucsf.edu/chimerax/docs/"
+  if(!window.navigator.userAgent.includes("ChimeraX")){
+    window.onclick = function(e){
+      if(e.target.tagName.toLowerCase()!="a")
+	return true;
+      var url=e.target.getAttribute("href").toLowerCase();
+      if(url.startsWith("help:")){
+	window.location.href = cxlinks_base + url.substring(5);
+	return false;
+      }
+      if(url.startsWith("cxcmd:")){
+	alert("This link only works in a ChimeraX browser and would execute a command.");
+	return false;
+      }
+      return true;
+    }
+    var ls=document.links;
+    for(var i=0;i<ls.length;i++){
+      var link=ls[i];
+      var url=link.getAttribute("href").toLowerCase();
+      if(url.startsWith("cxcmd:"))
+	link.style.color="darkred";
+    }
+  }
+};
+</script>
+</head>
+<h1> ChimeraX Log </h1>
+<style>
+
+.cxcmd {
+    display: block;
+    font-weight: bold;
+    margin-top: .5em;
+    background-color: #ddd;
+}
+a.no_underline {
+    text-decoration: none;
+}
+
+.cxcmd_as_doc {
+    display: inline;
+}
+.cxcmd_as_cmd {
+    display: none;
+}
+</style>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/cd.html">cd</a> /Users/erin/Work/crosslinking</div><div class="cxcmd_as_cmd"><a href="cxcmd:cd /Users/erin/Work/crosslinking">cd /Users/erin/Work/crosslinking</a></div></div>Current working directory is: /Users/erin/Work/crosslinking<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> models/I7MKN3-unrelaxed_model_1.pdb</div><div class="cxcmd_as_cmd"><a href="cxcmd:open models/I7MKN3-unrelaxed_model_1.pdb">open models/I7MKN3-unrelaxed_model_1.pdb</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="2">Chain information for I7MKN3-unrelaxed_model_1.pdb #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-718">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">No description available</a></td>
+
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html#byattribute">color bfactor</a> palette alphafold</div><div class="cxcmd_as_cmd"><a href="cxcmd:color bfactor palette alphafold">color bfactor palette alphafold</a></div></div>6159 atoms, 718 residues, atom bfactor range 32.1 to 98<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:561@ca #1:91@ca dashes 0 radius 0.5 color darkred</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:561@ca #1:91@ca dashes 0 radius 0.5 color darkred">distance #1:561@ca #1:91@ca dashes 0 radius 0.5 color darkred</a></div></div>Distance between /A LYS 561 CA and LYS 91 CA: 30.682Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:628@ca #1:622@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:628@ca #1:622@ca dashes 0 radius 0.5 color darkblue">distance #1:628@ca #1:622@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 628 CA and LYS 622 CA: 9.457Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:265@ca #1:254@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:265@ca #1:254@ca dashes 0 radius 0.5 color darkblue">distance #1:265@ca #1:254@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 265 CA and LYS 254 CA: 16.424Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:325@ca #1:319@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:325@ca #1:319@ca dashes 0 radius 0.5 color darkblue">distance #1:325@ca #1:319@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 325 CA and LYS 319 CA: 10.040Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:254@ca #1:247@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:254@ca #1:247@ca dashes 0 radius 0.5 color darkblue">distance #1:254@ca #1:247@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 254 CA and LYS 247 CA: 10.417Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:543@ca #1:535@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:543@ca #1:535@ca dashes 0 radius 0.5 color darkblue">distance #1:543@ca #1:535@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 543 CA and LYS 535 CA: 12.279Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:412@ca #1:401@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:412@ca #1:401@ca dashes 0 radius 0.5 color darkblue">distance #1:412@ca #1:401@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 412 CA and LYS 401 CA: 20.929Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:181@ca #1:177@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:181@ca #1:177@ca dashes 0 radius 0.5 color darkblue">distance #1:181@ca #1:177@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 181 CA and LYS 177 CA: 6.339Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:341@ca #1:325@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:341@ca #1:325@ca dashes 0 radius 0.5 color darkblue">distance #1:341@ca #1:325@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 341 CA and LYS 325 CA: 24.865Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:551@ca #1:543@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:551@ca #1:543@ca dashes 0 radius 0.5 color darkblue">distance #1:551@ca #1:543@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 551 CA and LYS 543 CA: 11.978Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:535@ca #1:529@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:535@ca #1:529@ca dashes 0 radius 0.5 color darkblue">distance #1:535@ca #1:529@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 535 CA and LYS 529 CA: 9.779Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:543@ca #1:91@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:543@ca #1:91@ca dashes 0 radius 0.5 color darkblue">distance #1:543@ca #1:91@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 543 CA and LYS 91 CA: 24.795Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:495@ca #1:488@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:495@ca #1:488@ca dashes 0 radius 0.5 color darkblue">distance #1:495@ca #1:488@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 495 CA and LYS 488 CA: 10.631Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:561@ca #1:167@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:561@ca #1:167@ca dashes 0 radius 0.5 color darkblue">distance #1:561@ca #1:167@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 561 CA and LYS 167 CA: 14.436Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:460@ca #1:453@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:460@ca #1:453@ca dashes 0 radius 0.5 color darkblue">distance #1:460@ca #1:453@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 460 CA and LYS 453 CA: 10.644Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:300@ca #1:293@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:300@ca #1:293@ca dashes 0 radius 0.5 color darkblue">distance #1:300@ca #1:293@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 300 CA and LYS 293 CA: 10.581Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/distance.html">distance</a> #1:590@ca #1:583@ca dashes 0 radius 0.5 color darkblue</div><div class="cxcmd_as_cmd"><a href="cxcmd:distance #1:590@ca #1:583@ca dashes 0 radius 0.5 color darkblue">distance #1:590@ca #1:583@ca dashes 0 radius 0.5 color darkblue</a></div></div>Distance between /A LYS 590 CA and LYS 583 CA: 10.509Å<br>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/set.html">set</a> bgColor white</div><div class="cxcmd_as_cmd"><a href="cxcmd:set bgColor white">set bgColor white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html">lighting</a> soft</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting soft">lighting soft</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/view.html">view</a> clip false</div><div class="cxcmd_as_cmd"><a href="cxcmd:view clip false">view clip false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/show.html#hide">hide</a> #2.1 models</div><div class="cxcmd_as_cmd"><a href="cxcmd:hide #2.1 models">hide #2.1 models</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> chx/Unrelaxed/I7MKN3.cxs format session</div><div class="cxcmd_as_cmd"><a href="cxcmd:save chx/Unrelaxed/I7MKN3.cxs format session">save chx/Unrelaxed/I7MKN3.cxs format session</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/log.html#save">log save</a> chx/Unrelaxed/I7MKN3_log.html</div><div class="cxcmd_as_cmd"><a href="cxcmd:log save chx/Unrelaxed/I7MKN3_log.html">log save chx/Unrelaxed/I7MKN3_log.html</a></div></div></body>
+</html>
