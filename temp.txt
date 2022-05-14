@@ -37,20 +37,4 @@ tar czf rankings.tar.gz rankings
 
 TODO:
 
-Visualizations?
-Seaborn in Python
-
-Chimera X
-* Look at domains (can get from uniprot)
-* Compare predicted structures with known from uniprot (for those that exist)
-Plot: see PDF
-
-For top 10 XL proteins:
-* try running with relax, see if the XL changes
-
-Updates:
-* Ran top 10 cross linked proteins with relax - doesn't seem clearly any better or worse
-* Looking at pLDDT for PRKG1 - need to figure out what cutoff to use
-* Seems like Predicted Aligned Error would be nice to have to determine domain cutoffs, see Alphafold paper
-	- Except current outputs weren't run with the pTM models, so they don't have PAE values
-	- Apparently pTM models have slightly lower accuracy
+- Take snapshots of the ChimeraX sessions
