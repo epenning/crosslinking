@@ -138,7 +138,6 @@ for protein in proteins:
     # Chimera X
     run(session, 'close session')
     run(session, 'log clear')
-    run(session, 'cd /Users/erin/Work/crosslinking')
 
     ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + PTM_PDB_SUFFIX
     try:
@@ -193,5 +192,7 @@ for protein in proteins:
     run(session, 'view clip false')
     run(session, 'hide #3.1 models')
 
+    # Save Results
+    run(session, 'save chx/PTM/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
     run(session, 'save chx/PTM/{}.cxs format session'.format(sanitize_protein(protein)))
     run(session, 'log save chx/PTM/{}_log.html'.format(sanitize_protein(protein)))

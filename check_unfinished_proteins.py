@@ -30,9 +30,18 @@ unfolded_proteins = []
 for protein in all_proteins:
     pdb_filepath = 'models/' + sanitize_protein(protein) + '-unrelaxed_model_1.pdb'
     if not exists(pdb_filepath):
-        print(protein)
         unfolded_proteins.append(protein)
 
 print(unfolded_proteins)
+print()
+print('Unrendered proteins:')
+
+unrendered_proteins = []
+for protein in all_proteins:
+    png_filepath = 'chx/Unrelaxed/Images/' + sanitize_protein(protein) + '.png'
+    if not exists(png_filepath):
+        unrendered_proteins.append(protein)
+
+print(unrendered_proteins)
 
 # %%
