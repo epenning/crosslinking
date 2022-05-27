@@ -2,6 +2,8 @@ Get finished PDBs as list:
 find . -type f -name unrelaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 find . -type f -name relaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
+find . -type f -name unrelaxed_model_1_ptm.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
+
 
 
 Generate commands to copy finished PDBs to models/<protein>-(un)relaxed_model_1.pdb
@@ -16,6 +18,9 @@ find -regex './.*/relaxed_model_1_ptm.pdb' -exec sh -c 'new=$(echo "{}" | tr "/"
 
 Generate commands to copy finished results to results/<protein>-result_model_<model>_ptm.pkl
 find -regex './.*/result_model_1_ptm.pkl' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "results/${new:2}"' \;
+
+Generate commands to copy finished MSAs to ../output/<protein>/msas
+find -regex './.*/msas' -exec sh -c 'new=$(echo "{}"); mkdir -p "../output/${new:2}" && cp -a "{}/." "../output/${new:2}"' \;
 
 
 Compress finished PDBs:
