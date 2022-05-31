@@ -1,0 +1,8 @@
+          Id   Score  Protein1  PepPos1                 PepSeq1  LinkPos1   Protein2  PepPos2          PepSeq2  LinkPos2  Res1  Res2  newRes1  newRes2
+452      453  278.48    Q22T19      473             RNAELKEHLQK         6     Q22T19      474       NAELKEHLQK         5   478   478      478      478
+4671    4672  179.33  EFhand-2      406           RVLIKPHFEDFDK         5   EFhand-2      407     VLIKPHFEDFDK         4   410   410      410      410
+5454    5455  171.01     GST19       83       TELLGKDNDKYTVDTLR        10      GST19       89      DNDKYTVDTLR         4    92    92       92       92
+12017  12018  108.14      PGM3      441  IEDFKGTPENLQVLKEFLHEVK         5       PGM3      441  IEDFKGTPENLQVLK         5   445   445      445      445
+12667  12668  101.33     GST19      109          LYMLTQKEGDDKTK         7      GST19      109     LYMLTQKEGDDK         7   115   115      115      115
+17496  17497  212.63      EF1A      311          RGNVASDAKNDPAK         9       EF1A      312    GNVASDAKNDPAK         8   319   319      319      319
+18772  18773  112.84    I7LZI8      188             LTGKNEEEKIK         4     I7LZI8      188        LTGKNEEEK         4   191   191      191      191
