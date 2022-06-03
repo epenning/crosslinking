@@ -35,6 +35,8 @@ Location of compressed PDBs:
 Generate commands to copy rankings to rankings/<protein>-ranking_debug.json
 find * -name ranking_debug.json -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "rankings/$new"' \;
 
+find * -name ranking_debug.json -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_" | tr "." "_PTM."); cp "{}" "rankings/$new"' \;
+
 
 Compress finished rankings:
 tar czf rankings.tar.gz rankings
