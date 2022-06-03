@@ -6,7 +6,8 @@ PATH_WATERSHED_LABELS = 'watershed_labels.json'
 
 UNRELAXED_PDB_SUFFIX = '-unrelaxed_model_1.pdb'
 RELAXED_PDB_SUFFIX = '-relaxed_model_1.pdb'
-PTM_PDB_SUFFIX = '-relaxed_model_1_ptm.pdb'
+RELAXED_PTM_PDB_SUFFIX = '-relaxed_model_1_ptm.pdb'
+UNRELAXED_PTM_PDB_SUFFIX = '-unrelaxed_model_1_ptm.pdb'
 RESULTS_PKL_SUFFIX = '-result_model_1_ptm.pkl'
 PAE_PKL_SUFFIX = '-pae_model_1_ptm.pkl'
 
@@ -35,14 +36,14 @@ for protein in proteins:
     run(session, 'close session')
     run(session, 'log clear')
 
-    ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + PTM_PDB_SUFFIX
-    if not exists(ptm_pdb_filepath):
+    relaxed_ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + RELAXED_PTM_PDB_SUFFIX
+    if not exists(relaxed_ptm_pdb_filepath):
         continue
 
-    protein_model = run(session, 'open ' + ptm_pdb_filepath)
+    protein_model = run(session, 'open ' + relaxed_ptm_pdb_filepath)
 
-    unrelaxed_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PDB_SUFFIX
-    opened_models = run(session, 'open ' + unrelaxed_pdb_filepath)
+    unrelaxed_ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PTM_PDB_SUFFIX
+    opened_models = run(session, 'open ' + unrelaxed_ptm_pdb_filepath)
 
     run(session, 'matchmaker #2@ca to #1@ca')
 
@@ -52,6 +53,6 @@ for protein in proteins:
     run(session, 'view clip false')
 
     # Save Results
-    run(session, 'save chx/PTM/VS_Unrelaxed/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
-    run(session, 'save chx/PTM/VS_Unrelaxed/{}.cxs format session'.format(sanitize_protein(protein)))
-    run(session, 'log save chx/PTM/VS_Unrelaxed/{}_log.html'.format(sanitize_protein(protein)))
+    run(session, 'save chx/PTM/VS_Unrelaxed_PTM/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
+    run(session, 'save chx/PTM/VS_Unrelaxed_PTM/{}.cxs format session'.format(sanitize_protein(protein)))
+    run(session, 'log save chx/PTM/VS_Unrelaxed_PTM/{}_log.html'.format(sanitize_protein(protein)))
