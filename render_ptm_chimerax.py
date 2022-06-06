@@ -29,14 +29,20 @@ colors1 = [colors9[0]]
 colors2 = [colors9[0], colors9[8]]
 colors3 = [colors9[0], colors9[4], colors9[8]]
 colors4 = [colors9[0], colors9[2], colors9[5], colors9[8]]
+colors5 = [colors9[0], colors9[2], colors9[4], colors9[6], colors9[8]]
+colors6 = [colors9[0], colors9[1], colors9[3], colors9[4], colors9[6], colors9[8]]
 colors7 = colors9[0:4] + colors9[5:8]
+colors8 = colors9[0:4] + colors9[5:9]
 
 color_palettes = {
     1: colors1,
     2: colors2,
     3: colors3,
     4: colors4,
+    5: colors5,
+    6: colors6,
     7: colors7,
+    8: colors8,
     9: colors9
 }
 
