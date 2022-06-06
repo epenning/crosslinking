@@ -42,8 +42,8 @@ for protein in proteins:
 
     protein_model = run(session, 'open ' + relaxed_ptm_pdb_filepath)
 
-    unrelaxed_ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PTM_PDB_SUFFIX
-    opened_models = run(session, 'open ' + unrelaxed_ptm_pdb_filepath)
+    unrelaxed_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PDB_SUFFIX
+    opened_models = run(session, 'open ' + unrelaxed_pdb_filepath)
 
     run(session, 'matchmaker #2@ca to #1@ca')
 
@@ -53,6 +53,6 @@ for protein in proteins:
     run(session, 'view clip false')
 
     # Save Results
-    run(session, 'save chx/PTM/VS_Unrelaxed_PTM/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
-    run(session, 'save chx/PTM/VS_Unrelaxed_PTM/{}.cxs format session'.format(sanitize_protein(protein)))
-    run(session, 'log save chx/PTM/VS_Unrelaxed_PTM/{}_log.html'.format(sanitize_protein(protein)))
+    run(session, 'save chx/PTM/VS_Unrelaxed/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
+    run(session, 'save chx/PTM/VS_Unrelaxed/{}.cxs format session'.format(sanitize_protein(protein)))
+    run(session, 'log save chx/PTM/VS_Unrelaxed/{}_log.html'.format(sanitize_protein(protein)))
