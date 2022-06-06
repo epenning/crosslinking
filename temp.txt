@@ -3,11 +3,14 @@ find . -type f -name unrelaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr ".
 find . -type f -name relaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
 find . -type f -name unrelaxed_model_1_ptm.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
+find . -type f -name relaxed_model_1_ptm.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
 
 
 Generate commands to copy finished PDBs to models/<protein>-(un)relaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
+find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); cp "{}" "models/$new"' \;
+find * -name relaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); cp "{}" "models/$new"' \;
 
 find * -name unrelaxed_model_1_pred_0.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
 find * -name relaxed_model_1_pred_0.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
@@ -15,6 +18,7 @@ find * -name relaxed_model_1_pred_0.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-
 
 Generate commands to copy finished PDBs to models/<protein>-relaxed_model_<model>_ptm.pdb
 find -regex './.*/unrelaxed_model_1_ptm.pdb' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/${new:2}"' \;
+find -regex './.*/relaxed_model_1_ptm.pdb' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); cp "{}" "models/${new:2}"' \;
 
 Generate commands to copy finished results to results/<protein>-result_model_<model>_ptm.pkl
 find -regex './.*/result_model_1_ptm.pkl' -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "results/${new:2}"' \;
