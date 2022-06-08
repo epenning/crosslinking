@@ -36,11 +36,11 @@ for protein in proteins:
     run(session, 'close session')
     run(session, 'log clear')
 
-    relaxed_ptm_pdb_filepath = 'models/' + sanitize_protein(protein) + RELAXED_PTM_PDB_SUFFIX
-    if not exists(relaxed_ptm_pdb_filepath):
+    relaxed_pdb_filepath = 'models/' + sanitize_protein(protein) + RELAXED_PDB_SUFFIX
+    if not exists(relaxed_pdb_filepath):
         continue
 
-    protein_model = run(session, 'open ' + relaxed_ptm_pdb_filepath)
+    protein_model = run(session, 'open ' + relaxed_pdb_filepath)
 
     unrelaxed_pdb_filepath = 'models/' + sanitize_protein(protein) + UNRELAXED_PDB_SUFFIX
     opened_models = run(session, 'open ' + unrelaxed_pdb_filepath)
@@ -53,6 +53,6 @@ for protein in proteins:
     run(session, 'view clip false')
 
     # Save Results
-    run(session, 'save chx/PTM/VS_Unrelaxed/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
-    run(session, 'save chx/PTM/VS_Unrelaxed/{}.cxs format session'.format(sanitize_protein(protein)))
-    run(session, 'log save chx/PTM/VS_Unrelaxed/{}_log.html'.format(sanitize_protein(protein)))
+    run(session, 'save chx/Relaxed/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
+    run(session, 'save chx/Relaxed/{}.cxs format session'.format(sanitize_protein(protein)))
+    run(session, 'log save chx/Relaxed/{}_log.html'.format(sanitize_protein(protein)))
