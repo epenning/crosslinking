@@ -47,6 +47,10 @@ for protein in proteins:
 
     run(session, 'matchmaker #2@ca to #1@ca')
 
+    # run(session, 'color #1 #66c2a5')
+    # run(session, 'color #2 #fc8d62')
+    run(session, 'color #1 #722184')
+    run(session, 'color #2 #31b383')
     run(session, 'set bgColor white')
     run(session, 'lighting soft depthCue false')
     run(session, 'graphics silhouettes true')
