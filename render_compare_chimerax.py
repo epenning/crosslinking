@@ -49,14 +49,14 @@ for protein in proteins:
 
     # run(session, 'color #1 #66c2a5')
     # run(session, 'color #2 #fc8d62')
-    run(session, 'color #1 #722184')
-    run(session, 'color #2 #31b383')
+    run(session, 'color #1 #80227e')
+    run(session, 'color #2 #70bc75')
     run(session, 'set bgColor white')
     run(session, 'lighting soft depthCue false')
     run(session, 'graphics silhouettes true')
     run(session, 'view clip false')
 
     # Save Results
-    run(session, 'save chx/Relaxed/Images/{}.png supersample 3'.format(sanitize_protein(protein)))
+    run(session, 'save chx/Relaxed/Images/{}.png width 1298 height 1198 supersample 3'.format(sanitize_protein(protein)))
     run(session, 'save chx/Relaxed/{}.cxs format session'.format(sanitize_protein(protein)))
     run(session, 'log save chx/Relaxed/{}_log.html'.format(sanitize_protein(protein)))
