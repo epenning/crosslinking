@@ -5,7 +5,7 @@ find . -type f -name relaxed_model_1_pred_0.pdb | sed -r 's|/[^/]+$||' | tr "." 
 find . -type f -name unrelaxed_model_1_ptm.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 find . -type f -name relaxed_model_1_ptm.pdb | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
-
+find . | sed -r 's|/[^/]+$||' | tr "." "'" | tr -d "/" | sed "s/$/',/"
 
 Generate commands to copy finished PDBs to models/<protein>-(un)relaxed_model_1.pdb
 find * -name unrelaxed_model_1.pdb -exec sh -c 'new=$(echo "{}" | tr "/" "-" | tr " " "_"); echo cp "{}" "models/$new"' \;
@@ -28,7 +28,7 @@ find -regex './.*/msas' -exec sh -c 'new=$(echo "{}"); mkdir -p "../output/${new
 
 
 Compress finished PDBs:
-tar czf models.tar.gz models
+tar czf pdbs.tar.gz pdbs
 
 
 Location of compressed PDBs:
